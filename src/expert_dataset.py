@@ -26,19 +26,8 @@ class ExpertDataset:
             dataset_states[i] = state
             dataset_actions[i, action] = 1
             state = next_state
-        dataset_states, dataset_actions = self.clean_dataset(dataset_states,
-                                                             dataset_actions)
         return dataset_states, dataset_actions
 
-    def clean_dataset(self, states: np.array, 
-                      actions: np.array) -> Tuple[np.ndarray, np.ndarray]:
-        actions_dim = actions.shape[1]
-        states_dim = states.shape[1]
-        dataset = np.concatenate((states, actions), axis=1)
-        dataset = np.unique(dataset, axis=0)
-        states = dataset[:, :states_dim]
-        actions = dataset[:, -actions_dim:]
-        return states, actions
 
 if __name__ == "__main__":
     env = gym.make("CartPole-v1a")
