@@ -19,7 +19,8 @@ class Pretrain:
         self.keras_model.fit(self.states, self.actions,
                              batch_size=batch_size,
                              epochs=num_epochs,
-                             validation_split=validation_split)
+                             validation_split=validation_split,
+                             verbose=0)
 
     def get_pretrained_model(self) -> BaseRLModel:
         """'Clone the model on the way Keras -> BaseRLModel"""
