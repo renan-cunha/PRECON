@@ -92,7 +92,7 @@ model.learn(total_timesteps=num_steps)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/CoffeeOverflow/DrawToCode/blob/master/LICENSE) file 
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/renan-cunha/BehavioralCloning/blob/master/LICENSE) file 
 for details.
 
 [![UFPA](docs/logo_ufpa_github_footer.png)](https://portal.ufpa.br/ "Visite o site da UFPA")
