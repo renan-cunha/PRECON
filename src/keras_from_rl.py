@@ -34,6 +34,8 @@ def create_model(layers: List[int]) -> keras.Model:
     first_layer = layers[1]
     model.add(keras.layers.Dense(first_layer, input_dim=input_dim,
                                  activation="tanh"))
-    for num_neurons in layers[2:]:
-        model.add(keras.layers.Dense(num_neurons, activation="tanh"))
+    for num_neurons in layers[2:-1]:
+        model.add(keras.layers.Dense(num_neurons,
+                                     activation="tanh"))
+    model.add(keras.layers.Dense(layers[-1]))
     return model
