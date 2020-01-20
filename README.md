@@ -1,7 +1,7 @@
 # PRECON: Pre-training with Continuous Actions
 
 This package does pre-training in continuous environments using models
-of stable baselines. As the day of this commit :), stable baselines has a
+of stable baselines. As the day of this commit :), stable baselines has an
 implementation of pre-training only for environments with discrete actions.
 
 ## Implementations
@@ -42,7 +42,7 @@ You need to perform all the steps below
 
 * Make an expert agent
     * You need to implement the ExpertAgent interface
-* Make data (states and actions) from enviroment episodes
+* Make data (states and actions) from environment episodes
 * Run the pre-training
 
 ### Example
