@@ -1,1 +1,7 @@
 # Required python libraries
+stable_baselines
+keras
+numpy
+tqdm
+matplotlib
+gym
