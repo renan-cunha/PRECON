@@ -12,9 +12,6 @@ class Pretrain:
         self.actions = actions
         self.keras_model = keras_from_rl(model)
 
-    #TODO: Train the cloned model
-    #TODO: set the weights of the BaseRLModel
-
     def fit(self, num_epochs: int, batch_size=64, validation_split=0.75) -> Model:
 
         self.keras_model.compile(optimizer="adam", loss="mse",
@@ -26,5 +23,17 @@ class Pretrain:
 
     def get_pretrained_model(self) -> BaseRLModel:
         """'Clone the model on the way Keras -> BaseRLModel"""
-        pass
+        keys = {}
+        keras_parameters = self.keras_model.get_weights()
+        rl_parameters = self.model.get_parameters()
+        index = 0
+        for parameter in rl_parameters:
+            cond1 = parameter.startswith("model/pi")
+            cond2 = not parameter.startswith('model/pi/logstd')
+            if cond1 and cond2:
+                keys[parameter] = keras_parameters[index]
+                index += 1
+        self.model.load_parameters(keys, exact_match=False)
+        return self.model
+        
 
