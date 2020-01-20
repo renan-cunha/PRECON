@@ -1,4 +1,4 @@
-from src.expert_agent import ExpertAgent
+from precon.expert_agent import ExpertAgent
 import gym
 from typing import Dict
 import numpy as np

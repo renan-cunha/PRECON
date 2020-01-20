@@ -4,9 +4,9 @@ import numpy as np
 from stable_baselines.ddpg.policies import MlpPolicy
 from stable_baselines.common.noise import NormalActionNoise, OrnsteinUhlenbeckActionNoise, AdaptiveParamNoiseSpec
 from stable_baselines import DDPG
-from src.expert_agent import ExpertAgent
+from precon.expert_agent import ExpertAgent
 from stable_baselines.common.base_class import BaseRLModel
-from src.expert_dataset import generate_expert_dataset
+from precon.expert_dataset import generate_expert_dataset
 
 
 class ExpertPendulum(ExpertAgent):

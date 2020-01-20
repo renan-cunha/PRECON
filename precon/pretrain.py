@@ -1,7 +1,7 @@
 from stable_baselines.common.base_class import BaseRLModel
 import numpy as np
 from keras import Model
-from src.keras_from_rl import keras_from_rl
+from precon.keras_from_rl import keras_from_rl
 
 
 class Pretrain:
