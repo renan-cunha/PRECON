@@ -12,7 +12,8 @@ class Pretrain:
         self.actions = actions
         self.keras_model = keras_from_rl(model)
 
-    def fit(self, num_epochs: int, batch_size=64, validation_split=0.75) -> Model:
+    def fit(self, num_epochs: int, batch_size=64, validation_split=0.75,
+            verbose=0) -> Model:
 
         self.keras_model.compile(optimizer="adam", loss="mse",
                                  metrics=["mse"])
@@ -20,7 +21,7 @@ class Pretrain:
                              batch_size=batch_size,
                              epochs=num_epochs,
                              validation_split=validation_split,
-                             verbose=0)
+                             verbose=verbose)
 
     def get_pretrained_model(self) -> BaseRLModel:
         """'Clone the model on the way Keras -> BaseRLModel"""
