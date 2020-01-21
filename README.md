@@ -36,6 +36,11 @@ Install required packages by:
 pip install -r requirements.txt
 ```
 
+## Installation
+
+```pip install .```
+
+
 ## Usage
 
 You need to perform all the steps below
